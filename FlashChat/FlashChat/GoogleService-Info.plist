@@ -7,21 +7,21 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>574964815270-77vvtf2sengnde8a2kd1tbde4qvutq2t.apps.googleusercontent.com</string>
+	<string>586557054839-ncgabobmjq95mviepe6s2gtrg1tdpdj2.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.574964815270-77vvtf2sengnde8a2kd1tbde4qvutq2t</string>
+	<string>com.googleusercontent.apps.586557054839-ncgabobmjq95mviepe6s2gtrg1tdpdj2</string>
 	<key>API_KEY</key>
-	<string>AIzaSyAnA1VxtdjIWWVtEaMtzG7NIy4KniaKW4I</string>
+	<string>AIzaSyB5-BJlN7i1ITPd_0rRarPRbwz1nfI7pig</string>
 	<key>GCM_SENDER_ID</key>
-	<string>574964815270</string>
+	<string>586557054839</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.ChrisYang.Flash-Chat</string>
+	<string>com.chrisyoung.FlashChat</string>
 	<key>PROJECT_ID</key>
-	<string>flash-chat-a1d08</string>
+	<string>flashchat-fed3d</string>
 	<key>STORAGE_BUCKET</key>
-	<string>flash-chat-a1d08.appspot.com</string>
+	<string>flashchat-fed3d.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<true></true>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -33,8 +33,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:574964815270:ios:b8e70b28a53c4c03</string>
+	<string>1:586557054839:ios:a23008661ae1269e</string>
 	<key>DATABASE_URL</key>
-	<string>https://flash-chat-a1d08.firebaseio.com</string>
+	<string>https://flashchat-fed3d.firebaseio.com</string>
 </dict>
 </plist>

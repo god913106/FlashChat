@@ -19,16 +19,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         FirebaseApp.configure()
-        //this part of the code gets called before anything else happens in the app.
-        //so every single time you open up before you go to any of the other screens.
-        //this is the first method that gets triggered.
-        //and in here we want to configure our firebase application.
-        
-        //測試 傳值到firebase database
-        //So remember we wrote these two lines just simply to test to see if we can save some data into our database.
-        //會導致每次開啟這個app就會重置database，而沒了歷史訊息，所以要註解掉
-        //        let myDatabase = Database.database().reference()
-        //        myDatabase.setValue("We've got data!")
         
         return true
     }
