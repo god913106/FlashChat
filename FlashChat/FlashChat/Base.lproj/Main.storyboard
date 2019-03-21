@@ -67,7 +67,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Welcome" id="yP9-nG-cuJ"/>
                     <connections>
-                        <segue destination="1Qn-3J-leg" kind="push" identifier="goToChat" id="WvD-3D-j35"/>
+                        <segue destination="5hr-iN-2tM" kind="push" id="nGd-ep-YoN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -77,7 +77,7 @@
         <!--註冊-->
         <scene sceneID="bwS-hB-6dX">
             <objects>
-                <viewController id="i5h-ID-2Ah" sceneMemberID="viewController">
+                <viewController id="i5h-ID-2Ah" customClass="RegisterViewController" customModule="FlashChat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9gz-DY-4EX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -113,6 +113,9 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="titleShadowColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="registerPressed:" destination="i5h-ID-2Ah" eventType="touchUpInside" id="jjP-Aa-mNs"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -134,15 +137,19 @@
                         <viewLayoutGuide key="safeArea" id="a4K-cs-xSY"/>
                     </view>
                     <navigationItem key="navigationItem" title="註冊" id="9bm-Vf-8rZ"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="IvB-YR-UyX" id="lA0-tb-RFQ"/>
+                        <outlet property="passwordTextField" destination="G4F-B4-dPp" id="RBw-1K-tR1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nr1-dg-9CX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2094" y="-561"/>
+            <point key="canvasLocation" x="1854" y="-123"/>
         </scene>
         <!--登入-->
         <scene sceneID="VFC-Iu-2vc">
             <objects>
-                <viewController id="ERZ-Wu-JX2" sceneMemberID="viewController">
+                <viewController id="ERZ-Wu-JX2" customClass="LogInViewController" customModule="FlashChat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gav-kX-x4x">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -180,6 +187,10 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="titleShadowColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="logInPressed:" destination="WuV-Bh-Wrb" eventType="touchUpInside" id="W0G-kc-YvT"/>
+                                    <action selector="logInPressed:" destination="ERZ-Wu-JX2" eventType="touchUpInside" id="yqp-C9-mGK"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -201,41 +212,90 @@
                         <viewLayoutGuide key="safeArea" id="ACl-kp-krM"/>
                     </view>
                     <navigationItem key="navigationItem" title="登入" id="P2W-6W-mqc"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="b0Y-iM-hkA" id="u6C-xP-Vbz"/>
+                        <outlet property="passwordTextField" destination="o3Q-FP-5xX" id="6eb-1z-rtU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OER-R4-o9b" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="WuV-Bh-Wrb" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2009" y="810"/>
+            <point key="canvasLocation" x="1854" y="673"/>
         </scene>
-        <!--Flash Chat-->
-        <scene sceneID="NFq-4t-E5Y">
+        <!--聊天室-->
+        <scene sceneID="L6N-gA-qLp">
             <objects>
-                <tableViewController id="1Qn-3J-leg" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="cHL-IU-WRD">
+                <viewController id="5hr-iN-2tM" customClass="ChatViewController" customModule="FlashChat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Mxw-zZ-bcN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PWn-6H-qJS">
+                                <rect key="frame" x="0.0" y="587" width="375" height="80"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rq2-OC-YDN">
+                                        <rect key="frame" x="287" y="10" width="80" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="80" id="Xrv-ed-xHq"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <state key="normal" title="送出">
+                                            <color key="titleColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                    </button>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="請輸入訊息" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xt4-hx-fdF">
+                                        <rect key="frame" x="8" y="10" width="271" height="60"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="xt4-hx-fdF" firstAttribute="leading" secondItem="PWn-6H-qJS" secondAttribute="leading" constant="8" id="LBl-VL-bfO"/>
+                                    <constraint firstAttribute="bottom" secondItem="Rq2-OC-YDN" secondAttribute="bottom" constant="10" id="Skn-2q-Yp5"/>
+                                    <constraint firstItem="Rq2-OC-YDN" firstAttribute="leading" secondItem="xt4-hx-fdF" secondAttribute="trailing" constant="8" id="VmC-gN-j8H"/>
+                                    <constraint firstAttribute="height" constant="80" id="WJR-G1-jGo"/>
+                                    <constraint firstAttribute="trailing" secondItem="Rq2-OC-YDN" secondAttribute="trailing" constant="8" id="XzF-7q-3hv"/>
+                                    <constraint firstAttribute="bottom" secondItem="xt4-hx-fdF" secondAttribute="bottom" constant="10" id="faA-gO-MGl"/>
+                                    <constraint firstItem="Rq2-OC-YDN" firstAttribute="top" secondItem="PWn-6H-qJS" secondAttribute="top" constant="10" id="hOQ-i5-gSr"/>
+                                    <constraint firstItem="xt4-hx-fdF" firstAttribute="top" secondItem="PWn-6H-qJS" secondAttribute="top" constant="10" id="ylm-1n-zJx"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="DeS-Rl-2S6">
+                                <rect key="frame" x="0.0" y="64" width="375" height="523"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MessageCell" id="thc-O3-sLt">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="thc-O3-sLt" id="05O-1b-plg">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="r4B-Q3-d6W">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="r4B-Q3-d6W" id="q9V-zo-LSL">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="1Qn-3J-leg" id="Biz-5L-ZKm"/>
-                            <outlet property="delegate" destination="1Qn-3J-leg" id="71D-FA-nAU"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Flash Chat" id="uLU-N0-OC8">
-                        <barButtonItem key="rightBarButtonItem" title="登出" id="bZh-Ui-oUJ"/>
+                        <constraints>
+                            <constraint firstItem="PWn-6H-qJS" firstAttribute="trailing" secondItem="Rg1-wJ-gFT" secondAttribute="trailing" id="EYy-Iu-d8p"/>
+                            <constraint firstItem="Rg1-wJ-gFT" firstAttribute="trailing" secondItem="DeS-Rl-2S6" secondAttribute="trailing" id="GPA-Qa-WJv"/>
+                            <constraint firstItem="DeS-Rl-2S6" firstAttribute="leading" secondItem="Rg1-wJ-gFT" secondAttribute="leading" id="IES-MV-eSH"/>
+                            <constraint firstItem="PWn-6H-qJS" firstAttribute="bottom" secondItem="Rg1-wJ-gFT" secondAttribute="bottom" id="Pgg-uG-l9N"/>
+                            <constraint firstItem="PWn-6H-qJS" firstAttribute="top" secondItem="DeS-Rl-2S6" secondAttribute="bottom" id="Py6-V9-ZJL"/>
+                            <constraint firstItem="PWn-6H-qJS" firstAttribute="leading" secondItem="Rg1-wJ-gFT" secondAttribute="leading" id="S2M-eh-UZl"/>
+                            <constraint firstItem="DeS-Rl-2S6" firstAttribute="top" secondItem="Rg1-wJ-gFT" secondAttribute="top" id="uFF-Rb-q6u"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Rg1-wJ-gFT"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="聊天室" id="xcq-Vn-IXW">
+                        <barButtonItem key="rightBarButtonItem" title="登出" id="fyI-UR-HuG"/>
                     </navigationItem>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="nfb-GF-q58" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sst-qV-UWw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3433" y="236"/>
+            <point key="canvasLocation" x="2845.5999999999999" y="283.80809595202402"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="aUp-t2-hsD">
@@ -253,7 +313,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mqa-rh-PI2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="25" y="284"/>
+            <point key="canvasLocation" x="215" y="284"/>
         </scene>
     </scenes>
     <resources>

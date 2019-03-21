@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4202579B22437E090031B68F /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4202579A22437E090031B68F /* LogInViewController.swift */; };
+		4202579D22437E1F0031B68F /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4202579C22437E1F0031B68F /* RegisterViewController.swift */; };
+		4202579F22437E3B0031B68F /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4202579E22437E3B0031B68F /* ChatViewController.swift */; };
 		42DCEED9224232B700E69D6E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DCEED8224232B700E69D6E /* AppDelegate.swift */; };
 		42DCEEDB224232B700E69D6E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DCEEDA224232B700E69D6E /* ViewController.swift */; };
 		42DCEEDE224232B700E69D6E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42DCEEDC224232B700E69D6E /* Main.storyboard */; };
@@ -21,6 +24,9 @@
 
 /* Begin PBXFileReference section */
 		21B2C95DBCCD1BB2BFFA3D9A /* Pods_FlashChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlashChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4202579A22437E090031B68F /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		4202579C22437E1F0031B68F /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		4202579E22437E3B0031B68F /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		42DCEED5224232B700E69D6E /* FlashChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlashChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42DCEED8224232B700E69D6E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		42DCEEDA224232B700E69D6E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -109,6 +115,9 @@
 			children = (
 				42DCEED8224232B700E69D6E /* AppDelegate.swift */,
 				42DCEEDA224232B700E69D6E /* ViewController.swift */,
+				4202579A22437E090031B68F /* LogInViewController.swift */,
+				4202579C22437E1F0031B68F /* RegisterViewController.swift */,
+				4202579E22437E3B0031B68F /* ChatViewController.swift */,
 			);
 			path = Cotroller;
 			sourceTree = "<group>";
@@ -237,7 +246,7 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
@@ -248,7 +257,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
@@ -287,6 +296,9 @@
 				42DCEEF522423D9100E69D6E /* Message.swift in Sources */,
 				42DCEEDB224232B700E69D6E /* ViewController.swift in Sources */,
 				42DCEEF92242579B00E69D6E /* CustomMessageCell.swift in Sources */,
+				4202579F22437E3B0031B68F /* ChatViewController.swift in Sources */,
+				4202579D22437E1F0031B68F /* RegisterViewController.swift in Sources */,
+				4202579B22437E090031B68F /* LogInViewController.swift in Sources */,
 				42DCEED9224232B700E69D6E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -437,7 +449,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T9EWCF83UK;
 				INFOPLIST_FILE = FlashChat/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -457,7 +469,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T9EWCF83UK;
 				INFOPLIST_FILE = FlashChat/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

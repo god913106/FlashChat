@@ -20,6 +20,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         FirebaseApp.configure()
         
+        //測試firebase有沒有運作
+//        let myDatabase = Database.database().reference()
+//        myDatabase.setValue("we've got data!")
+        
         return true
     }
 
