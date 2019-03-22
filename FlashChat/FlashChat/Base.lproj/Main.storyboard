@@ -140,6 +140,7 @@
                     <connections>
                         <outlet property="emailTextField" destination="IvB-YR-UyX" id="lA0-tb-RFQ"/>
                         <outlet property="passwordTextField" destination="G4F-B4-dPp" id="RBw-1K-tR1"/>
+                        <segue destination="5hr-iN-2tM" kind="push" identifier="goToChat" id="BmH-9W-9Nq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nr1-dg-9CX" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -215,6 +216,7 @@
                     <connections>
                         <outlet property="emailTextField" destination="b0Y-iM-hkA" id="u6C-xP-Vbz"/>
                         <outlet property="passwordTextField" destination="o3Q-FP-5xX" id="6eb-1z-rtU"/>
+                        <segue destination="5hr-iN-2tM" kind="push" identifier="goToChat" id="kQ0-td-1uO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OER-R4-o9b" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -231,10 +233,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PWn-6H-qJS">
-                                <rect key="frame" x="0.0" y="587" width="375" height="80"/>
+                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rq2-OC-YDN">
-                                        <rect key="frame" x="287" y="10" width="80" height="60"/>
+                                        <rect key="frame" x="287" y="10" width="80" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="80" id="Xrv-ed-xHq"/>
                                         </constraints>
@@ -242,9 +244,12 @@
                                         <state key="normal" title="送出">
                                             <color key="titleColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="sendPressed:" destination="5hr-iN-2tM" eventType="touchUpInside" id="PIg-hG-4Hx"/>
+                                        </connections>
                                     </button>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="請輸入訊息" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xt4-hx-fdF">
-                                        <rect key="frame" x="8" y="10" width="271" height="60"/>
+                                        <rect key="frame" x="8" y="10" width="271" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -255,7 +260,7 @@
                                     <constraint firstItem="xt4-hx-fdF" firstAttribute="leading" secondItem="PWn-6H-qJS" secondAttribute="leading" constant="8" id="LBl-VL-bfO"/>
                                     <constraint firstAttribute="bottom" secondItem="Rq2-OC-YDN" secondAttribute="bottom" constant="10" id="Skn-2q-Yp5"/>
                                     <constraint firstItem="Rq2-OC-YDN" firstAttribute="leading" secondItem="xt4-hx-fdF" secondAttribute="trailing" constant="8" id="VmC-gN-j8H"/>
-                                    <constraint firstAttribute="height" constant="80" id="WJR-G1-jGo"/>
+                                    <constraint firstAttribute="height" constant="50" id="WJR-G1-jGo"/>
                                     <constraint firstAttribute="trailing" secondItem="Rq2-OC-YDN" secondAttribute="trailing" constant="8" id="XzF-7q-3hv"/>
                                     <constraint firstAttribute="bottom" secondItem="xt4-hx-fdF" secondAttribute="bottom" constant="10" id="faA-gO-MGl"/>
                                     <constraint firstItem="Rq2-OC-YDN" firstAttribute="top" secondItem="PWn-6H-qJS" secondAttribute="top" constant="10" id="hOQ-i5-gSr"/>
@@ -263,7 +268,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="DeS-Rl-2S6">
-                                <rect key="frame" x="0.0" y="64" width="375" height="523"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="553"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MessageCell" id="thc-O3-sLt">
@@ -290,8 +295,18 @@
                         <viewLayoutGuide key="safeArea" id="Rg1-wJ-gFT"/>
                     </view>
                     <navigationItem key="navigationItem" title="聊天室" id="xcq-Vn-IXW">
-                        <barButtonItem key="rightBarButtonItem" title="登出" id="fyI-UR-HuG"/>
+                        <barButtonItem key="rightBarButtonItem" title="登出" id="fyI-UR-HuG">
+                            <connections>
+                                <action selector="logOutPressed:" destination="5hr-iN-2tM" id="sdt-rb-7Zu"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="heightConstraint" destination="WJR-G1-jGo" id="bGa-Md-8NE"/>
+                        <outlet property="messageTableView" destination="DeS-Rl-2S6" id="CYJ-7R-8RK"/>
+                        <outlet property="messageTextField" destination="xt4-hx-fdF" id="dNf-bk-pjx"/>
+                        <outlet property="sendButton" destination="Rq2-OC-YDN" id="xCu-YO-Ief"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sst-qV-UWw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -320,4 +335,7 @@
         <image name="background" width="1280" height="949"/>
         <image name="background1" width="1800" height="1192.5"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="kQ0-td-1uO"/>
+    </inferredMetricsTieBreakers>
 </document>
