@@ -16,7 +16,7 @@ class ChatViewController: UIViewController , UITableViewDelegate, UITableViewDat
     var messageArray : [Message] = [Message]()
     
     
-    @IBOutlet weak var heightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var heightConstraint1: NSLayoutConstraint!
     @IBOutlet weak var sendButton: UIButton!
     @IBOutlet weak var messageTextField: UITextField!
     @IBOutlet weak var messageTableView: UITableView!
@@ -29,9 +29,10 @@ class ChatViewController: UIViewController , UITableViewDelegate, UITableViewDat
         
 
 
-        
+
         messageTableView.delegate = self
         messageTableView.dataSource = self
+        
         messageTextField.delegate = self
         
        
@@ -44,7 +45,7 @@ class ChatViewController: UIViewController , UITableViewDelegate, UITableViewDat
         //TODO: Register your MessageCell.xib file here:
         //註冊 自定義的cell.xib
         messageTableView.register(UINib(nibName: "MessageCell", bundle: nil), forCellReuseIdentifier: "customMessageCell")
-        // configureTableView()
+        configureTableView()
         retrieveMessages()
         
         messageTableView.separatorStyle = .none //cell的分隔線格式
@@ -86,28 +87,30 @@ class ChatViewController: UIViewController , UITableViewDelegate, UITableViewDat
         messageTextField.endEditing(true)
     }
     
-    //對話欄內的字有多有少，所以要讓對話框可以自動調整高度尺寸
+    
     func configureTableView() {
-//        messageTableView.rowHeight = UITableView.automaticDimension //自動調整高度尺寸
-//        messageTableView.estimatedRowHeight = 120.0
+        messageTableView.rowHeight = UITableView.automaticDimension //自動調整高度尺寸
+        messageTableView.estimatedRowHeight = 120.0
     }
     
     
     //MARK:- TextField Delegate Methods
     // 開始進入編輯狀態
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        
-        
+
+        // 當要打字時 框高度會往上
         UIView.animate(withDuration: 0.5) {
-            self.heightConstraint.constant = 308
+            self.heightConstraint1.constant = 363
             self.view.layoutIfNeeded()
         }
     }
     
     // 結束編輯狀態(意指完成輸入或離開焦點)
     func textFieldDidEndEditing(_ textField: UITextField) {
+        
+        // 當不打字時 框高度會回到50
         UIView.animate(withDuration: 0.5) {
-            self.heightConstraint.constant = 50
+            self.heightConstraint1.constant = 50
             self.view.layoutIfNeeded()
         }
     }
@@ -131,7 +134,7 @@ class ChatViewController: UIViewController , UITableViewDelegate, UITableViewDat
             if error != nil {
                 print(error!)
             }else{
-                print("Message saved successfully")
+                print("訊息存取成功！")
                 self.messageTextField.isEnabled = true
                 self.sendButton.isEnabled = true
                 self.messageTextField.text = ""
